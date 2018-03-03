@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
             currentWindow: true
         }, function (tabs) {
             var activeTab = tabs[0];
-            console.log("button sent");
             chrome.tabs.sendMessage(activeTab.id, {
-                "message": "clicked_browser_action"
+                "message": "clicked_browser_action",
+                "tab": activeTab
             });
         });
     });
